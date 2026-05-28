@@ -430,6 +430,24 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import re
 
+
+nama_file_gambar = "elemen.png"
+
+LETAK_OPACITY = 0.65
+
+st.markdown(f"""
+    <div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+        <img 
+            src="app/static/{nama_file_gambar}" 
+            width="350" 
+            style="
+                opacity: {LETAK_OPACITY};
+                max-width: 100%;
+                height: auto;
+            "
+        >
+    </div>
+""", unsafe_allow_html=True)
 # =========================================================
 # PAGE CONFIG
 # =========================================================
