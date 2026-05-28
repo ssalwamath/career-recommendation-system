@@ -15,6 +15,7 @@ import re
 import matplotlib.pyplot as plt
 import streamlit as st
 import seaborn as sns
+import base64
 
 import nltk
 from nltk.corpus import stopwords
@@ -451,6 +452,23 @@ st.sidebar.info("""
 - Career Recommendation
 - Text Analysis
 """)
+
+def add_bg_from_local(image_file):
+    with open(image_file, "rb") as f:
+        encoded = base64.b64encode(f.read()).decode()
+
+    st.markdown(f"""
+    <style>
+    .stApp {{
+        background-image: url("data:image/jpg;base64,{encoded}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }}
+    </style>
+    """, unsafe_allow_html=True)
+
+add_bg_from_local("backgroundweb.jpg")
 
 # =========================================================
 # TITLE
