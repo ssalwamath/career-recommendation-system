@@ -599,7 +599,7 @@ def predict_cluster(text):
 
     for word in edu_keywords:
         if word in text:
-            scores['Education &Healthcare'] += 1
+            scores['Education & Healthcare'] += 1
             detected_keywords.append(word)
 
     # =====================================================
