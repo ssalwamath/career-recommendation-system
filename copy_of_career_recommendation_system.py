@@ -433,7 +433,7 @@ import re
 
 nama_file_gambar = "elemen.png"
 
-LETAK_OPACITY = 0.65
+LETAK_OPACITY = 1.0
 
 st.markdown(f"""
     <div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
