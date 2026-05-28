@@ -481,20 +481,6 @@ st.markdown("""
 # =========================================================
 # TITLE
 # =========================================================
-st.markdown("""
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
-
-[data-testid="stTitle"] {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 42px;
-    font-weight: 700;
-    background: linear-gradient(to right, #2c2b67, #3b3a84);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-</style>
-""", unsafe_allow_html=True)
 
 st.title("Career Recommendation System")
 
@@ -743,6 +729,22 @@ cluster_icons = {
 # =========================================================
 # BUTTON
 # =========================================================
+st.markdown("""
+<style>
+.stButton > button {
+    background-color: #3b3a84;
+    color: white;
+    font-weight: 700;
+    border-radius: 12px;
+    border: none;
+}
+
+.stButton > button:hover {
+    transform: scale(1.03);
+    transition: 0.2s ease;
+}
+</style>
+""", unsafe_allow_html=True)
 
 if st.button("🔍 Cari Pekerjaan yang Cocok"):
 
