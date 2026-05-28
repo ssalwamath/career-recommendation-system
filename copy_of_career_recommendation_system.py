@@ -783,16 +783,18 @@ if st.button("🔍 Cari Pekerjaan yang Cocok"):
     st.markdown("""
         <style>
         .custom-bubble {
-            background-color: #4d4ba4;          /* Warna background dalam bubble */
+            background-color: rgba(77, 75, 164, 0.85);          /* Warna background dalam bubble */
             padding: 20px;                      /* Jarak teks ke tepi kotak */
             border-radius: 15px;                /* Bikin sudutnya membulat (efek bubble) */
-            border: 1px solid #e0e0e0;          /* Garis tepi tipis */
+            border: 3px solid rgb(50, 49, 103, 0.5);          /* Garis tepi tipis */
             box-shadow: 2px 2px 12px rgba(0,0,0,0.05); /* Efek bayangan halus */
             margin-bottom: 25px;                /* Jarak antar bubble */
         }
+       .custom-bubble h3, .custom-bubble li, .custom-bubble p {
+        color: #ffffff !important;
+        }
         .custom-bubble h3 {
-            margin-top: 0px;                    /* Merapikan judul di dalam bubble */
-            color: #ffffff;
+        margin-top: 0px;                    /* Merapikan jarak atas judul */
         }
         </style>
         """, unsafe_allow_html=True)
