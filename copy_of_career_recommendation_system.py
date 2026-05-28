@@ -442,40 +442,47 @@ st.set_page_config(
 # =========================================================
 # SIDEBAR
 # =========================================================
+st.markdown("""
+<style>
+[data-testid="stSidebar"] {
+    background-color: #3b3a84;
+}
 
+/* warna teks sidebar */
+[data-testid="stSidebar"] * {
+    color: white;
+}
+</style>
+""", unsafe_allow_html=True)
 st.sidebar.title("🎯 Career Recommendation System")
 
 st.sidebar.info("""
 ### Model yang Digunakan
-- NLP
-- Rule-Based Clustering
-- Career Recommendation
-- Text Analysis
+- Natural Language Processing
+- K-Means Clustering
 """)
 
+st.sidebar.info("""
+### Hasil Analisis
+- Kategori Pekerjaan Impian
+- Rekomendasi Pekerjaan
+- Analisis Kecocokan Cluster
+- Analisis Profil
+""")
 
-def add_bg_from_local(image_file):
-    with open(image_file, "rb") as f:
-        encoded = base64.b64encode(f.read()).decode()
-
-    st.markdown(f"""
-    <style>
-    .stApp {{
-        background-image: url("data:image/jpg;base64,{encoded}");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }}
-    </style>
-    """, unsafe_allow_html=True)
-
-add_bg_from_local("backgroundweb.jpg")
+st.markdown("""
+<style>
+.stApp {
+    background: linear-gradient(to right, #effcff, #8988ff);
+}
+</style>
+""", unsafe_allow_html=True)
 
 # =========================================================
 # TITLE
 # =========================================================
 
-st.title("🎯 Career Recommendation System")
+st.title("Career Recommendation System")
 
 st.markdown("""
 Sistem rekomendasi pekerjaan berbasis
