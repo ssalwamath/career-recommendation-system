@@ -481,6 +481,20 @@ st.markdown("""
 # =========================================================
 # TITLE
 # =========================================================
+st.markdown("""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+
+[data-testid="stTitle"] {
+    font-family: 'Brick Sans', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    background: linear-gradient(to right, #2c2b67, #3b3a84);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+</style>
+""", unsafe_allow_html=True)
 
 st.title("Career Recommendation System")
 
