@@ -486,7 +486,7 @@ st.markdown("""
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
 
 [data-testid="stTitle"] {
-    font-family: 'Press Strat 2P', sans-serif;
+    font-family: 'Righteous', sans-serif;
     font-size: 42px;
     font-weight: 700;
     background: linear-gradient(to right, #2c2b67, #3b3a84);
