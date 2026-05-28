@@ -431,7 +431,7 @@ import seaborn as sns
 import re
 
 
-nama_file_gambar = "elemen.png"
+url_gambar_github = "https://raw.github.com/ssalwamath/career-recommendation-system/main/elemen.png"
 
 LETAK_OPACITY = 1.0
 
