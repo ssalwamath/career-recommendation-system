@@ -453,22 +453,13 @@ st.sidebar.info("""
 - Text Analysis
 """)
 
-def add_bg_from_local(image_file):
-    with open(image_file, "rb") as f:
-        encoded = base64.b64encode(f.read()).decode()
-
-    st.markdown(f"""
-    <style>
-    .stApp {{
-        background-image: url("data:image/jpg;base64,{encoded}");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }}
-    </style>
-    """, unsafe_allow_html=True)
-
-add_bg_from_local("backgroundweb.jpg")
+st.markdown("""
+<style>
+.stApp {
+    background: linear-gradient(to right, #effcff, #8988ff);
+}
+</style>
+""", unsafe_allow_html=True)
 
 # =========================================================
 # TITLE
