@@ -471,47 +471,6 @@ st.sidebar.info("""
 - Analisis Profil
 """)
 
-# =====================================================
-#  FUNGSI UNTUK MEMBACA GAMBAR LOKAL (ANTI BROKEN)
-# =====================================================
-import base64
-
-def get_base64_image(image_path):
-    with open(image_path, "rb") as img_file:
-        return base64.b64encode(img_file.read()).decode()
-
-nama_file_lokal = "elemen.png"
-
-try:
-    # Mengubah gambar lokal menjadi teks base64
-    base64_image = get_base64_image(elemen)
-    img_src = f"data:image/png;base64,{base64_image}"
-except FileNotFoundError:
-    # Backup jika file tidak ditemukan agar aplikasi tidak langsung crash
-    img_src = ""
-    st.error(f"File gambar '{elemen}' tidak ditemukan di folder project kamu!")
-
-# =====================================================
-# OPACITY & PASANG CSS BACKGROUND OVERLAY
-# =====================================================
-LETAK_OPACITY = 0.4  # Silakan ganti (0.0 sampai 1.0) sesuai seleramu
-
-st.markdown(f"""
-    <style>
-    /* Membuat elemen gambar melayang menetap di background sebelah kanan */
-    .bg-overlay-image {{
-        position: fixed;            /* Membuat posisi gambar terkunci di layar */
-        right: 5%;                 /* Jarak dari batas kanan layar web */
-        bottom: 10%;               /* Jarak dari batas bawah layar web */
-        width: 450px;              /* Ukuran lebar gambar */
-        opacity: {LETAK_OPACITY};  /* Mengatur transparansi */
-        z-index: 0;                /* Menaruh gambar di lapisan paling bawah */
-        pointer-events: none;      /* Mengabaikan klik agar user tetap bisa blok teks */
-    }}
-    </style>
-    
-    <img src="{img_src}" class="bg-overlay-image">
-""", unsafe_allow_html=True)
 
 st.markdown("""
 <style>
@@ -832,8 +791,7 @@ if st.button("🔍 Cari Pekerjaan yang Cocok"):
             border: 3px solid rgb(50, 49, 103, 0.5);          /* Garis tepi tipis */
             box-shadow: 2px 2px 12px rgba(0,0,0,0.05); /* Efek bayangan halus */
             margin-bottom: 25px;                /* Jarak antar bubble */
-            position: relative;        /* WAJIB: Agar bubble tahu posisinya terhadap layar */
-            z-index: 1;
+
         }
        .custom-bubble h3, .custom-bubble li, .custom-bubble p {
         color: #ffffff !important;
