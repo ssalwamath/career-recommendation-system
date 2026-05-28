@@ -431,23 +431,6 @@ import seaborn as sns
 import re
 
 
-url_gambar_github = "https://raw.githubusercontent.com/ssalwamath/career-recommendation-system/main/elemen.png"
-
-LETAK_OPACITY = 1.0
-
-st.markdown(f"""
-    <div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
-        <img 
-            src="app/static/{nama_file_gambar}" 
-            width="350" 
-            style="
-                opacity: {LETAK_OPACITY};
-                max-width: 100%;
-                height: auto;
-            "
-        >
-    </div>
-""", unsafe_allow_html=True)
 # =========================================================
 # PAGE CONFIG
 # =========================================================
