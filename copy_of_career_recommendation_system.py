@@ -470,15 +470,52 @@ st.sidebar.info("""
 - Analisis Kecocokan Cluster
 - Analisis Profil
 """)
+import streamlit as st
+import base64
 
+def get_base64(image_file):
+    with open(image_file, "rb") as f:
+        return base64.b64encode(f.read()).decode()
 
-st.markdown("""
+img = get_base64("elemen.png")
+
+st.markdown(f"""
 <style>
 .stApp {
     background: linear-gradient(to right, #effcff, #8988ff);
 }
+/* elemen gambar background */
+.stApp::before {{
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-image: url("data:image/png;base64,{img}");
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 20px;
+    right: 20px;
+    opacity: 0.2;
+    pointer-events: none;
+}}
+
+.stApp::after {{
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-image: url("data:image/png;base64,{img}");
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 20px;
+    left: 20px;
+    opacity: 0.15;
+    pointer-events: none;
+}}
+
 </style>
 """, unsafe_allow_html=True)
+
 
 # =========================================================
 # TITLE
