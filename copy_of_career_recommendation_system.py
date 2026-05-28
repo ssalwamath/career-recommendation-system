@@ -780,13 +780,35 @@ if st.button("🔍 Cari Pekerjaan yang Cocok"):
     # =====================================================
     # REKOMENDASI PEKERJAAN
     # =====================================================
+st.markdown("""
+    <style>
+    .custom-bubble {
+        background-color: ##4d4ba4;          /* Warna background dalam bubble */
+        padding: 20px;                      /* Jarak teks ke tepi kotak */
+        border-radius: 15px;                /* Bikin sudutnya membulat (efek bubble) */
+        border: 1px solid #e0e0e0;          /* Garis tepi tipis */
+        box-shadow: 2px 2px 12px rgba(0,0,0,0.05); /* Efek bayangan halus */
+        margin-bottom: 25px;                /* Jarak antar bubble */
+    }
+    .custom-bubble h3 {
+        margin-top: 0px;                    /* Merapikan judul di dalam bubble */
+        color: #ffffff;
+    }
+    </style>
+""", unsafe_allow_html=True)
+# Gabungkan list rekomendasi menjadi elemen list HTML (<li>)
+html_jobs = "".join([f"<li>✅ {job}</li>" for job in recommendations])
 
-    st.subheader("💼 Rekomendasi Pekerjaan")
 
-    for job in recommendations:
-
-        st.markdown(f"- ✅ {job}")
-
+# Cetak ke dalam bubble HTML
+st.markdown(f"""
+    <div class="custom-bubble">
+        <h3 style="margin-top: 0px;">💼 Rekomendasi Pekerjaan</h3>
+        <ul style="list-style-type: none; padding-left: 0;">
+            {html_jobs}
+        </ul>
+    </div>
+""", unsafe_allow_html=True)
     # =====================================================
     # KEYWORD TERDETEKSI
     # =====================================================
